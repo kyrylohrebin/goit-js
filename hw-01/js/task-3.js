@@ -7,7 +7,7 @@ const enterPassword = prompt("Введите пароль");
 
 if (enterPassword === null) {
   message = "Отменено пользователем!";
-} else if (enterPassword === "jqueryismyjam") {
+} else if (enterPassword === ADMIN_PASSWORD) {
   message = "Добро пожаловать!";
 } else {
   message = "Доступ запрещен, неверный пароль!";
