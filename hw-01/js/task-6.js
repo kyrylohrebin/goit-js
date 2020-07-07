@@ -3,22 +3,20 @@ console.log("Task 6");
 let input;
 let total = 0;
 
-while (true) {
+
+do {
   input = prompt("Введите число");
 
-  if (input === null) {
-    break;
+  if (input !== null) {
+    input = Number(input);
+
+    if (Number.isNaN(+input)) {
+      alert("Это не число!");
+      continue;
+    }
+
+    total += input;
   }
-  input = Number(input);
+} while (input !== null);
 
-  const notNumber = Number.isNaN(input);
-
-  if (notNumber) {
-    alert("Это не число!");
-    continue;
-  }
-
-  total += input;
-}
-
-console.log(`Общая сумма ${total}`);
+alert(`Общая сумма ${total}`);
