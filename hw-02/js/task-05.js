@@ -3,11 +3,10 @@
 console.log("Task 5");
 
 const checkForSpam = function (message) {
-  if (message.toLowerCase().includes("spam")) {
-    return true;
-  } else if (message.toLowerCase().includes("sale")) {
-    return true;
-  } else return false;
+  let messageArr = message.toLowerCase();
+  return (message = messageArr.includes("spam") || messageArr.includes("sale"))
+    ? true
+    : false;
 };
 
 console.log(checkForSpam("Latest technology news"));
