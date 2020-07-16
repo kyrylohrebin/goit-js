@@ -4,9 +4,7 @@ console.log("Task 5");
 
 const checkForSpam = function (message) {
   let messageArr = message.toLowerCase();
-  return (message = messageArr.includes("spam") || messageArr.includes("sale"))
-    ? true
-    : false;
+  return messageArr.includes("spam") || messageArr.includes("sale");
 };
 
 console.log(checkForSpam("Latest technology news"));

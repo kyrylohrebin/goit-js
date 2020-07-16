@@ -8,27 +8,20 @@ let total = 0;
 
 do {
   input = prompt("Введите число");
-    if (input === null) {
-    break;
-  }
 
   if (input !== null) {
     if (Number.isNaN(+input)) {
       alert("Это не число!");
       continue;
     }
+    numbers.push(+input);
   }
-
-numbers.push(+input);
-
 } while (input !== null);
 
-for(const number of numbers){
-  total += number;
-}
-
 if (numbers.length > 0) {
+  for (const number of numbers) {
+    total += number;
+  }
+
   alert(`Общая сумма ${total}`);
-} else {
-  alert('Отменено пользователем');
 }
