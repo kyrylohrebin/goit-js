@@ -12,7 +12,7 @@ const findBestEmployee = function (employees) {
       bestEmployee = item;
     }
   }
-  return `${bestEmployee}`;
+  return bestEmployee;
 };
 
 console.log(
@@ -40,4 +40,3 @@ console.log(
     chelsy: 38,
   })
 ); // lux
-
