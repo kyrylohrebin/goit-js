@@ -13,7 +13,9 @@ const getAllPropValues = function (arr, prop) {
   const valuesArr = [];
 
   for (const item of arr) {
-    valuesArr.push(item[prop]);
+    if (item.hasOwnProperty(prop)) {
+      valuesArr.push(item[prop]);
+    }
   }
   return valuesArr;
 };
