@@ -3,17 +3,16 @@
 console.log("Task 3");
 
 const findBestEmployee = function (employees) {
+  let mostTasks = 0;
   let bestEmployee;
-  let mostTasks;
-  const entries = Object.entries(employees);
 
-  for (const [employee, tasksDone] of entries) {
-    if (!mostTasks || tasksDone > mostTasks) {
-      mostTasks = tasksDone;
-      bestEmployee = employee;
+  for (const item in employees) {
+    if (employees[item] > mostTasks) {
+      mostTasks = employees[item];
+      bestEmployee = item;
     }
   }
-  return `${bestEmployee}: ${mostTasks}`;
+  return `${bestEmployee}`;
 };
 
 console.log(
@@ -23,7 +22,7 @@ console.log(
     helen: 1,
     lorence: 99,
   })
-);
+); // lorence
 
 console.log(
   findBestEmployee({
@@ -31,7 +30,7 @@ console.log(
     mango: 17,
     ajax: 4,
   })
-);
+); // mango
 
 console.log(
   findBestEmployee({
@@ -40,4 +39,5 @@ console.log(
     kiwi: 19,
     chelsy: 38,
   })
-);
+); // lux
+
