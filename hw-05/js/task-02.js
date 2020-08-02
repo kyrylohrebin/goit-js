@@ -4,7 +4,7 @@ console.log("Task 2");
 
 class User {
 
-    constructor({ name = "name", age = 0, followers = 0 }) {
+    constructor({ name, age, followers }) {
       this.name = name;
       this.age = age;
       this.followers = followers;

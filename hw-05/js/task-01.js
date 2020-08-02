@@ -2,7 +2,7 @@
 
 console.log("Task 1");
 
-const Account = function({ login = "login", email = "email@mail.com" }) {
+const Account = function({ login, email }) {
     this.login = login;
     this.email = email;
 };

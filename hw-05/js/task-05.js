@@ -3,10 +3,6 @@
 console.log("Task 5");
 
 class Car {
- 
-    static getSpecs(car) {
-        console.log(car);
-    }
 
     constructor({ maxSpeed, speed = 0, isOn = false, distance = 0, price }) {
         this.maxSpeed = maxSpeed;
@@ -15,7 +11,10 @@ class Car {
         this.distance = distance;
         this._price = price;
     }
-
+ 
+    static getSpecs(car) {
+        console.log(car);
+    }
 
     get price() {
         return this._price;
@@ -51,7 +50,7 @@ class Car {
   
  
     drive(hours) {
-        if (this.isOn = true) {
+        if (this.isOn) {
             this.distance += hours * this.speed;
         }
     }
