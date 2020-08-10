@@ -77,7 +77,7 @@ console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sher
 console.log("Task 9");
 
 const getNamesSortedByFriendsCount = (users) => {
-  return users
+  return [...users]
     .sort(
       (currentUser, nextUser) =>
         currentUser.friends.length - nextUser.friends.length
@@ -91,11 +91,16 @@ console.log(getNamesSortedByFriendsCount(users));
 console.log("Task 10");
 
 const getSortedUniqueSkills = (users) => {
-  const userSkills = users.reduce((userSkills, user) => {
+  const userSkills = users.reduce((acc, val) => acc.concat(val.skills), []);
+  return userSkills
+    .filter((skill, index) => userSkills.indexOf(skill) === index)
+    .sort();
+
+  /*   const userSkills = users.reduce((userSkills, user) => {
   return userSkills.concat(user.skills);
   }, []);
   return Array.from(new Set(userSkills))
-  .sort();
+  .sort(); */
 };
 
 console.log(getSortedUniqueSkills(users));
