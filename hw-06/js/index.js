@@ -91,9 +91,8 @@ console.log(getNamesSortedByFriendsCount(users));
 console.log("Task 10");
 
 const getSortedUniqueSkills = (users) => {
-  const userSkills = users.reduce((acc, val) => acc.concat(val.skills), []);
-  return userSkills
-    .filter((skill, index) => userSkills.indexOf(skill) === index)
+  return users.reduce((acc, val) => acc.concat(val.skills), [])
+    .filter((skill, index, usersArr) => usersArr.indexOf(skill) === index)
     .sort();
 
   /*   const userSkills = users.reduce((userSkills, user) => {
