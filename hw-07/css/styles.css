@@ -1,0 +1,47 @@
+ul {
+    margin: 0;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+.section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: aquamarine;
+}
+
+.task__number {
+    margin-top: 0;
+    background-color: plum;
+}
+
+img {
+    display: block; 
+    max-width: 100%;
+    height: auto;
+}
+
+#gallery{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.gallery__item:not(:last-child){
+    margin-bottom: 10px;
+}
+
+#validation-input {
+    border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+    border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+    border-color: #f44336;
+  }
