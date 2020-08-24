@@ -9,7 +9,7 @@ const ingredients = [
   "Приправы",
 ];
 
-const listRef= document.querySelector("#ingredients");
+const listRef = document.querySelector("#ingredients");
 
 const createListItem = (listItem) => {
   return listItem.map((item) => {
@@ -18,6 +18,5 @@ const createListItem = (listItem) => {
     return elements;
   });
 };
-;
 
 listRef.append(...createListItem(ingredients));
