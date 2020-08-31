@@ -35,10 +35,11 @@ const imagesGallery = createGalleryItems(galleryItems);
 galleryRef.append(...imagesGallery);
 
 /*
-Делегируем клик на картинку
+Делегируем клик на картинку / открываем большую картинку
 */
 
 galleryRef.addEventListener('click', onImgClick);
+const lightboxImageRef = document.querySelector('.lightbox__image');
 
 function onImgClick (event) {
   event.preventDefault();
@@ -48,6 +49,17 @@ function onImgClick (event) {
   }
 
   openModal();
+
+  setLargeImageSrc(event.target.dataset.source);
+  setLargeImageAlt(event.target.alt);
+}
+
+function setLargeImageSrc(url) {
+  lightboxImageRef.src = url;
+}
+
+function setLargeImageAlt(alt) {
+  lightboxImageRef.alt = alt;
 }
 
 /*
@@ -55,9 +67,9 @@ function onImgClick (event) {
 */
 
 const lightboxRef = document.querySelector('.js-lightbox');
-const lightboxImageRef = document.querySelector('.lightbox__image');
 const lightboxBtnRef = document.querySelector('.lightbox__button');
 const lightboxContentRef = document.querySelector('.lightbox__content');
+
 
 lightboxBtnRef.addEventListener('click', closeOnBtn);
 lightboxContentRef.addEventListener('click', closeOnContent);
@@ -74,6 +86,11 @@ function openModal() {
 
 function closeModal() {
   lightboxRef.classList.remove('is-open');
+  deleteLargeImageSrc();
+}
+
+function deleteLargeImageSrc() {
+  lightboxImageRef.src = "";
 }
 
 function closeOnBtn() {
@@ -85,3 +102,4 @@ function closeOnContent(event) {
     closeModal();
   }
 }
+
